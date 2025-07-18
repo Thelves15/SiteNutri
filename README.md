@@ -27,7 +27,7 @@
 2. Abra o arquivo `index.html` no navegador de sua preferência.  
 
 Ou acesse diretamente a versão online:  
-[https://sitelayscarla.netlify.app/](https://sitelayscarla.netlify.app/)
+[https://sitelayscarla.netlify.app/](https://layscarlanutri.netlify.app/)
 
 ---
 
