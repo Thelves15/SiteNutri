@@ -39,7 +39,7 @@ O **sitenutri** foi desenvolvido com foco em simplicidade, usabilidade e elegân
 
 ## 👨‍💻 Desenvolvedor
 
-Thelves  
+Thelves Andrade
 
 ---
 
