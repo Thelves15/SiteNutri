@@ -607,12 +607,12 @@ body {
   z-index: 2;
 }
 
-.about-image {
+.about-video {
   text-align: center;
   position: relative;
 }
 
-.about-image::before {
+.about-video::before {
   content: "";
   position: absolute;
   top: -25px;
@@ -625,7 +625,7 @@ body {
   animation: imageFloat 12s ease-in-out infinite;
 }
 
-.about-image::after {
+.about-video::after {
   content: "";
   position: absolute;
   bottom: 10%;
@@ -643,12 +643,95 @@ body {
   animation: pulse 7s ease-in-out infinite;
 }
 
-.about-image img {
+.about-video video {
   max-width: 80%;
   height: auto;
+  border-radius: 15px;
   filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.1));
   position: relative;
   z-index: 1;
+  cursor: pointer;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 1; /* Visível por padrão */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(40, 167, 69, 0.9) 0%, rgba(32, 201, 151, 0.9) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+  animation: pulse-light 2s ease-in-out infinite;
+}
+
+@keyframes pulse-light {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.play-button i {
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .about-video::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(135deg, rgba(32, 201, 151, 0.05) 0%, rgba(23, 162, 184, 0.08) 100%);
+    border-radius: 30% 50% 40% 60%;
+    z-index: -1;
+    animation: imageFloat 12s ease-in-out infinite;
+  }
+
+  .about-video video {
+    max-width: 90%;
+    border-radius: 12px;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
+  }
+
+  .play-button {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-video video {
+    max-width: 95%;
+    border-radius: 10px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
 }
 
 .section-badge {
@@ -813,7 +896,7 @@ body {
   font-family: "Lora", serif;
   font-size: 36px;
   font-weight: 700;
-  color: #28a745;
+  color: #ff6b47;
   margin-bottom: 25px;
   line-height: 1.2;
 }
@@ -1502,7 +1585,7 @@ body {
     animation: imageFloat 10s ease-in-out infinite reverse;
   }
 
-  .about-image::before {
+  .about-video::before {
     content: "";
     position: absolute;
     top: -15px;
@@ -1552,7 +1635,7 @@ body {
   }
 
   .food-image img,
-  .about-image img,
+  .about-video video,
   .cta-image img {
     max-width: 70%;
     filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.1));
